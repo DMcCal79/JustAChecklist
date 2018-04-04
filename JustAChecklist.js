@@ -2,9 +2,6 @@ const item = document.querySelector('input[type=text]');
 const entryForm = document.querySelector('form');
 const checklist = document.querySelector('.checklist');
 const toDoItems = [];
-// const newItems = document.querySelectorAll('.newItem');
-const boxes = document.querySelectorAll('input[type=checkbox]');
-
 
 function addItem(e){
   e.preventDefault();
@@ -26,4 +23,3 @@ function strike(e) {
 
 
 entryForm.addEventListener('submit', addItem);
-boxes.forEach(item => addEventListener('click',strike));

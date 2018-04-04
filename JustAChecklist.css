@@ -12,15 +12,11 @@ body {
   flex-direction: column;
 }
 
-/* input[name=listItem] {
-  border: solid blue 5px;
-} */
 
 ul {
   list-style-type: none;
   padding:0;
-  /* text-align: center; */
-}
+  }
 
 input[type=text] {
   text-align: center;
@@ -28,4 +24,10 @@ input[type=text] {
 
 input[type=checkbox] {
   vertical-align: middle;
+}
+
+input:checked + label {
+  text-decoration: line-through;
+  font-style: italic;
+  color: gray;
 }
