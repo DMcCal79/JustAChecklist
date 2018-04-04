@@ -19,9 +19,13 @@ body {
 ul {
   list-style-type: none;
   padding:0;
-  text-align: center;
+  /* text-align: center; */
 }
 
 input[type=text] {
   text-align: center;
+}
+
+input[type=checkbox] {
+  vertical-align: middle;
 }
