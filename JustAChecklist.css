@@ -26,7 +26,7 @@ input[type=checkbox] {
   vertical-align: middle;
 }
 
-input:checked + label {
+input[type=checkbox]:checked + label {
   text-decoration: line-through;
   font-style: italic;
   color: gray;
