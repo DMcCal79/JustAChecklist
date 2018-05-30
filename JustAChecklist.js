@@ -49,7 +49,7 @@ function unchecked(e) {
       console.log(e.target);
       console.log(e.target.dataset.index);
       console.log(toDoItems);
-      indexUnchecked = parseInt(e.target.dataset.index); //returning NAN when label is clicked on
+      indexUnchecked = parseInt(e.target.dataset.index); 
       toDoItems.push(compItems[indexUnchecked]);
       updatedCompItems = [...compItems.slice(0,indexUnchecked), ...compItems.slice(indexUnchecked + 1)];
       compItems = updatedCompItems;
