@@ -18,36 +18,12 @@ function updateItems(list,items) {
   list.innerHTML = items.map((item,i) => {
     return `
       <li>
-        <input type="checkbox" id="item${i}" data-index=${i} ${boxChecked ? "checked" : ""}>
-        <label for= "item${i}">${item}</label>
+        <input type="checkbox" ${boxChecked ? `id=itemChecked${i}` : `id=item${i}`} data-index=${i} ${boxChecked ? "checked" : ""}>
+        <label ${boxChecked ? `for=itemChecked${i}` : `for=item${i}`}>${item}</label>
       </li>
       `;
   }).join('');
 };
-
-
-// function updateToDoItems() {
-//   checklist.innerHTML = toDoItems.map((toDoItem,i) => {
-//     return `
-//     <li>
-//       <input type="checkbox" data-index=${i} id="toDoItem${i}">
-//       <label for="toDoItem${i}">${toDoItem}</label>
-//     </li>
-//     `;
-//   }).join('');
-// };
-
-// function updateCheckedItems() {
-//   checkedBoxes.innerHTML = compItems.map((compItem,i) => {
-//     return `
-//     <li>
-//       <input type="checkbox" data-index=${i} id="compItem${i}" checked>
-//       <label for="compItem${i}">${compItem}</label>
-//     </li>
-//     `;
-//   }).join('');
-// };
-
 
 function checked(e) {
   let indexChecked;
@@ -58,7 +34,6 @@ function checked(e) {
       compItems.push(toDoItems[indexChecked]);
       updatedToDo = [...toDoItems.slice(0,indexChecked), ...toDoItems.slice(indexChecked + 1)];
       toDoItems = updatedToDo;
-      debugger
       boxChecked = true;
       updateItems(checkedBoxes,compItems);
       boxChecked = false;
@@ -69,25 +44,21 @@ function checked(e) {
 function unchecked(e) {
   let indexUnchecked;
   let updatedCompItems;
-    if(!e.target.checked) {
+    if(e.target.checked===false) {
       console.log('unchecked');
       console.log(e.target);
+      console.log(e.target.dataset.index);
+      console.log(toDoItems);
       indexUnchecked = parseInt(e.target.dataset.index); //returning NAN when label is clicked on
       toDoItems.push(compItems[indexUnchecked]);
       updatedCompItems = [...compItems.slice(0,indexUnchecked), ...compItems.slice(indexUnchecked + 1)];
       compItems = updatedCompItems;
-      console.log(e.target.dataset.index);
-      console.log(toDoItems);
-      debugger
       updateItems(checklist,toDoItems);
-      debugger
       boxChecked = true;
       updateItems(checkedBoxes,compItems);
       boxChecked = false;
     };
   };
-
-
 
 
 entryForm.addEventListener('submit', addItem);
