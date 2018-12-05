@@ -49,7 +49,7 @@ function unchecked(e) {
       console.log(e.target);
       console.log(e.target.dataset.index);
       console.log(toDoItems);
-      indexUnchecked = parseInt(e.target.dataset.index); 
+      indexUnchecked = parseInt(e.target.dataset.index);
       toDoItems.push(compItems[indexUnchecked]);
       updatedCompItems = [...compItems.slice(0,indexUnchecked), ...compItems.slice(indexUnchecked + 1)];
       compItems = updatedCompItems;
@@ -60,6 +60,10 @@ function unchecked(e) {
     };
   };
 
+function empty() {
+  compItems.length = 0;
+  updateItems(checkedBoxes,compItems);
+};
 
 entryForm.addEventListener('submit', addItem);
 checklist.addEventListener('click', checked);

@@ -31,3 +31,7 @@ input[type=checkbox]:checked + label {
   font-style: italic;
   color: gray;
 }
+
+#empty {
+  margin: 20px;
+}
