@@ -5,21 +5,28 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  border: solid red 1px;
+  /* border: solid red 1px; */
   width: 70%;
   margin: auto;
   align-items: center;
   flex-direction: column;
 }
 
+.container h1,h2 {
+  font-family: 'Permanent Marker', cursive;
+}
+
 
 ul {
   list-style-type: none;
   padding:0;
+  font-family: 'Roboto Mono', monospace;
   }
+
 
 input[type=text] {
   text-align: center;
+  font-family: 'Roboto Mono', monospace;
 }
 
 input[type=checkbox] {
@@ -34,4 +41,6 @@ input[type=checkbox]:checked + label {
 
 #empty {
   margin: 20px;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 15px;
 }
